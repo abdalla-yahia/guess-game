@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Word</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--Start Container Box-->
+    <div class="container">
+      <!--Start Header Section-->
+      <div class="header">
+
+        <div class="user-name">User Name =></div>
+
+      <div class="contain">
+        
+        <select name="" id="" class="select-level">
+          <option selected disabled >Select Level</option>
+          <option value="5">Hard</option>
+          <option value="15">Medium</option>
+          <option value="30">Easy</option>
+        </select>
+        
+        <div class="best-score">
+          <span>Best Score = </span>
+          <span class="score"></span>
+        </div>
+        <div class="timer"></div>
+    </div>
+    </div>
+    <!--Start Header Section-->
+    <!--Start Row Box-->
+      <div class="row">
+      <div class="col-show" data-message="Welcome 🥰" data-word="" data-right ='👆 Select Level' data-result="">
+          <button class="btn-return"></button>
+          <input type="text" class="name" placeholder="Your Name">
+        </div>
+        <div class="col">
+          <div class="chield">
+            <label>Try-1</label> 
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char"  data-word=""></input>
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char"  data-word=""></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char"  data-word=""></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char"  data-word=""></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char"  data-word=""></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char"  data-word=""></input >
+          </div>
+
+          <div class="chield ">
+            <label>Try-2</label> 
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+          </div>
+
+          <div class="chield disable">
+            <label>Try-3</label> 
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+          </div>
+
+          <div class="chield disable">
+            <label>Try-4</label> 
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+          </div>
+
+          <div class="chield disable">
+            <label>Try-5</label> 
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+          </div>
+
+          <div class="chield disable">
+            <label>Try-6</label> 
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+            <input type="text" maxlength="1" pattern="[A-Za-z]" class="char  disable"></input >
+          </div>
+
+        </div>
+        
+      </div>
+      <!--End Row Box-->
+      <!--Start OverLay-->
+      <div class="row-2">
+        <div class="color">
+          <p class="color-show"></p>
+          <p class="text">Letter Correct And In Place</p>
+        </div>
+        <div class="color">
+          <p class="color-show"></p>
+          <p class="text">Letter Correct But Not In Place</p>
+        </div>
+        <div class="color">
+          <p class="color-show"></p>
+          <p class="text">Letter Wrong</p>
+        </div>
+      </div>
+      <!--End OverLay-->
+    </div>
+    <!--End Container Box-->
+    <script src="app.js" ></script>
+  </body>
+</html>
