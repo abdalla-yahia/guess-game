@@ -43,7 +43,7 @@ let time =level.value !== 'Select Level'? level.value:'Time'
 let element = 0
 timer.innerHTML = time
 
-let message = `🥳🥳Congratulations  ${localStorage.getItem('name')} 🥳🥳`
+let message = `🥳🥳Congratulations  ${localStorage.getItem('name')} Greate Job 🥳🥳`
 let message_fail = `Sorry ${localStorage.getItem('name')} You Faild Game Over 😞😞`
 
 
