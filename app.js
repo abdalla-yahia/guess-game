@@ -54,7 +54,7 @@ const interval = setInterval(() => {
     if(time < 0){
         time = +level.value
     }
-console.log(time)
+    
 //Change This Place To Next Place When Time Is Equal To Zero
     if(time == 0){
         
