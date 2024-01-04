@@ -41,7 +41,7 @@ let word = localStorage.getItem('Elzero') && localStorage.getItem('Elzero');
 let count = 0
 let time =level.value !== 'Select Level'? level.value:'Time'
 let element = 0
-timer.innerHTML = time
+timer.innerHTML = +time
 
 let message = `🥳🥳Congratulations  ${localStorage.getItem('name')} Greate Job 🥳🥳`
 let message_fail = `Sorry ${localStorage.getItem('name')} You Faild !! Game Over 😞😞`
@@ -49,18 +49,36 @@ let message_fail = `Sorry ${localStorage.getItem('name')} You Faild !! Game Over
 
 //Main Function Changes Every One Second
 const interval = setInterval(() => {
-    timer.innerHTML = time
+    timer.innerHTML = +time
     level.value !== 'Select Level' && time--
-    if(time <0){
-        time = level.value
+    if(time < 0){
+        time = +level.value
     }
-
+console.log(time)
 //Change This Place To Next Place When Time Is Equal To Zero
-    if(time === 0){
+    if(time == 0){
+        
         char[element].setAttribute('readonly',true);
+        char.forEach(e=>{
+            e.classList.remove('active')
+        })
+        char[element+1].classList.add('active');
         char[element+1].focus()
         element++
         i=element
+
+          //Show Message Of Failing If User Failde To Find The Word
+          if(element >= char.length-1){
+            col.style.display = 'none';
+            col_show.style.display = 'flex';
+            col_show.setAttribute('data-message',message_fail);
+            col_show.setAttribute('data-right',word);
+            col_show.setAttribute('data-word','Right Word = ');
+            buntton.innerHTML = 'Try Again';
+            buntton.style.display = 'block';
+            inputname.style.display = 'none';
+            clearInterval(interval)
+        }
     }
 
 //Loop Of 'K' Class To Set Letter To Data-Word Of The Element
@@ -71,12 +89,20 @@ const interval = setInterval(() => {
                 char[j].classList.remove('disable')
                 count = 0
             }
-            char[i+1].focus();
+            for(let s=element; s >= element-5 ;s--){
+                    
+                    char[s].classList.add('disable')
+                
+            }
+            char[element+1].focus();
+            char.forEach(e=>{
+                e.classList.remove('active')
+                char[element+1].classList.add('active');
+            })
         }
     }
 
 char.forEach((e,i)=>{
-
 //Set The Letter OF The First Try
     for(let s=0; s <=5 ;s++){
         char[s].setAttribute('data-word',word[s])
@@ -148,24 +174,28 @@ char.forEach((e,i)=>{
 
         }else{
         // IF User Failed to Find Right Word Continue to The Next Try
+        char.forEach(e=>{
+            e.classList.remove('active')
+            char[element+1].classList.add('active');
+        })
             char[i+1].focus();
-            
-            for(let f in k) {
-                if(k[f] === i ){
-                    for(let j=i; j <= i+6 ;j++){
-                        char[j].setAttribute('data-word',word[j-k[f]-1])
-                        char[j].classList.remove('disable')
-                        count = 0
-                    }
-                    char[i+1].focus();
-                }
-            }
             
         }
             
         }
     })
-    
+    //Show Message Of Failing If User Failde To Find The Word
+    if(element >= char.length){
+        clearInterval(interval)
+        col.style.display = 'none';
+        col_show.style.display = 'flex';
+        col_show.setAttribute('data-message',message_fail);
+        col_show.setAttribute('data-right',word);
+        col_show.setAttribute('data-word','Right Word = ');
+        buntton.innerHTML = 'Try Again';
+        buntton.style.display = 'block';
+        inputname.style.display = 'none';
+    }
 }, 1000);
 
     // Replay Button 
@@ -180,14 +210,15 @@ char.forEach((e,i)=>{
                     col.style.display = 'block';
                     col_show.style.display = 'none';
                     level.style.visibility = 'hidden';
-                
+                    time=level.value
                 char[0].focus()
+                char[0].classList.add('active');
             }
             if(level.value !== 'Select Level'){
                 col.style.display = 'block';
                 col_show.style.display = 'none';
                 char[0].focus()
-            
+                char[0].classList.add('active');
                 time = level.value
             }
         })
