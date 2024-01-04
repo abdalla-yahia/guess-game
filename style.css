@@ -30,8 +30,8 @@
   align-items: center;
 }
 body {
-  font-family: "Times New Roman", Times, serif;
   height: 100vh;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .col,
@@ -196,8 +196,10 @@ body {
           }
         }
         label {
-          font-size: 40px;
+          font-size: 30px;
           margin-right: 20px;
+          color: var(--main-color);
+          text-transform: capitalize;
         }
       }
     }

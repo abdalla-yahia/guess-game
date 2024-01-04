@@ -25,7 +25,7 @@ let k ={
 
 //Change User Name After Input His Name
 inputname.onchange=(e)=>{
-    user_name.innerText += e.target.value
+    user_name.innerText += e.target.value || 'UnKnown'
 }
 
 //Get The Words From Json Object 
