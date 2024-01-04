@@ -97,7 +97,7 @@ char.forEach((e,i)=>{
             e.setAttribute('readonly',true);
         }
         // If The Letter Is Correct Letter
-        if(e.value === e.getAttribute('data-word') ){
+        if((e.value).toLowerCase() === e.getAttribute('data-word') ){
             count++;
             e.style.backgroundColor ='#ff9800';
             e.style.color = 'white';
