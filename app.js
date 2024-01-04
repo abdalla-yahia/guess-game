@@ -44,7 +44,7 @@ let element = 0
 timer.innerHTML = time
 
 let message = `🥳🥳Congratulations  ${localStorage.getItem('name')} Greate Job 🥳🥳`
-let message_fail = `Sorry ${localStorage.getItem('name')} You Faild Game Over 😞😞`
+let message_fail = `Sorry ${localStorage.getItem('name')} You Faild !! Game Over 😞😞`
 
 
 //Main Function Changes Every One Second
@@ -142,7 +142,7 @@ char.forEach((e,i)=>{
                 localStorage.setItem('score',`${105-i}`);
             }
             col_show.setAttribute('data-word','Your Score = ');
-            buntton.innerHTML = 'Play';
+            buntton.innerText = 'RePlay';
             buntton.style.display = 'block';
             inputname.style.display = 'none';
 
@@ -170,18 +170,24 @@ char.forEach((e,i)=>{
 
     // Replay Button 
     buntton.addEventListener('click',()=>{
-        col.style.display = 'block';
-        col_show.style.display = 'none';
-            window.location.reload();
-            setTimeout(()=>{
-            },1000)
-    })
-    // Start Play Button When Chose Levels
-    level.onchange = ()=>{
-        setTimeout(()=>{
-            time = level.value
-            col.style.display = 'block';
-            col_show.style.display = 'none';
-        },1000)
-        char[0].focus()
-    }
+        level.style.visibility = 'visible';
+        
+            if(buntton.innerText === 'Try Again' || buntton.innerText === 'RePlay'){
+                window.location.reload();
+            }
+            // Start Play Button When Choase Levels
+            level.onchange = ()=>{
+                    col.style.display = 'block';
+                    col_show.style.display = 'none';
+                    level.style.visibility = 'hidden';
+                
+                char[0].focus()
+            }
+            if(level.value !== 'Select Level'){
+                col.style.display = 'block';
+                col_show.style.display = 'none';
+                char[0].focus()
+            
+                time = level.value
+            }
+        })

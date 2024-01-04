@@ -97,6 +97,7 @@ body {
       left: 15.5%;
       border-radius: 15px;
       text-align: center;
+      visibility: hidden;
     }
     .best-score {
       left: 40%;
@@ -159,10 +160,11 @@ body {
       border: none;
       outline: none;
       box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
-      display: none;
+      /* display: none; */
     }
     .name {
       display: block;
+      bottom: 160px;
       background-color: #eee;
       color: var(--third-color);
       text-align: center;
@@ -192,6 +194,7 @@ body {
           border: none;
           outline: none;
           border-bottom: 3px solid black;
+          caret-color: red;
           &.disable {
             opacity: 0.5;
           }
