@@ -102,7 +102,7 @@ char.forEach((e,i)=>{
             e.style.backgroundColor ='#ff9800';
             e.style.color = 'white';
         //If The Word Contain The Letter Choases
-        }else if (word.includes(e.value)){
+        }else if (word.includes((e.value).toLowerCase())){
             e.style.backgroundColor ='#009688';
         //The Wrong Letter
         }else{
