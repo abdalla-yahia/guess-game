@@ -55,6 +55,7 @@ const interval = setInterval(() => {
         time = +level.value
     }
     
+    
 //Change This Place To Next Place When Time Is Equal To Zero
     if(time == 0){
         
@@ -110,6 +111,11 @@ char.forEach((e,i)=>{
 
 //Event Change Character 
     e.oninput=()=>{
+            const test = /^[a-zA-Z]/
+            if (!e.value.match(test)){
+                alert('Only English letters are allowed🙃')
+            }
+        
         element = i
         time=level.value
         //Set Valied Letter Accept Only Alphabet Character
@@ -127,6 +133,7 @@ char.forEach((e,i)=>{
             count++;
             e.style.backgroundColor ='#ff9800';
             e.style.color = 'white';
+            e.classList.add('yes-circle')
         //If The Word Contain The Letter Choases
         }else if (word.includes((e.value).toLowerCase())){
             e.style.backgroundColor ='#009688';

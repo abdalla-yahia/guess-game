@@ -98,6 +98,7 @@ body {
       border-radius: 15px;
       text-align: center;
       visibility: hidden;
+      background-color: var(--third-color);
     }
     .best-score {
       left: 40%;
@@ -160,8 +161,9 @@ body {
       border: none;
       outline: none;
       box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
-      /* display: none; */
+      
     }
+   
     .name {
       display: block;
       bottom: 160px;
@@ -201,6 +203,9 @@ body {
           }
           &.disable {
             opacity: 0.5;
+          }
+          &.yes-circle{
+            animation: yes-circle 2s ease-in-out;
           }
         }
         label {
@@ -342,6 +347,26 @@ body {
   }
   50% {
     opacity: 1;
+  }
+ 
+}
+
+@keyframes yes-circle {
+  0%{
+    transform: rotateY(0deg);
+  }
+  10%{
+    
+    transform:scale(3) rotateY(360deg);
+  }
+  
+  40%{
+    
+    transform:scale(0) rotateY(0deg)
+  }
+  50%{
+    
+    transform:scale(1) rotateY(360deg);
   }
  
 }
