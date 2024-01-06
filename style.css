@@ -17,6 +17,7 @@
 .header,
 .best-score,
 .timer,
+.color-show,
 .col,
 .chield,
 .char,
@@ -235,18 +236,28 @@ body {
         margin-right: 10px;
         background-color: var(--main-color);
         border-radius: 50%;
+        font-size: larger;
+        font-weight: 700;
       }
       .text {
         width: 70%;
+        color: white;
+      }
+      &:nth-child(1) {
+        .color-show {
+        animation: yes-circle 3s 5;
+        }
       }
       &:nth-child(2) {
         .color-show {
           background-color: var(--second-color);
+          color: black;
         }
       }
       &:nth-child(3) {
         .color-show {
           background-color: var(--third-color);
+          color: red;
         }
       }
       &:nth-child(4) {

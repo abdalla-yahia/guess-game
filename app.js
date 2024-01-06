@@ -22,16 +22,17 @@ let k ={
     i_3:23,
     i_4:29
 }
-let name= localStorage.getItem('name') || '';
+let name = localStorage.getItem('name') || '';
 let message = `🥳🥳Congratulations  ${name} Greate Job 🥳🥳`
 let message_fail = `Sorry ${name} You Faild !! Game Over 😞😞`
 
 //Change User Name After Input His Name
 inputname.onchange=(e)=>{
-    user_name.innerText += e.target.value
-    localStorage.setItem('name', e.target.value)
- message = `🥳🥳Congratulations  ${e.target.value} Greate Job 🥳🥳`
- message_fail = `Sorry ${e.target.value} You Faild !! Game Over 😞😞`
+    const  name = (e.target.value)[0].toUpperCase()+((e.target.value).split('').splice(1)).join('');
+    user_name.innerText += name
+    localStorage.setItem('name', name)
+    message = `🥳🥳Congratulations  ${name} Greate Job 🥳🥳`
+    message_fail = `Sorry ${name} You Faild !! Game Over 😞😞`
 }
 
 let word=''
@@ -220,3 +221,6 @@ char.forEach((e,i)=>{
             inputname.style.display = 'none';
             clearInterval(interval)
         }
+
+
+       
