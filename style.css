@@ -45,9 +45,10 @@ body {
 .container,
 .row {
   width: calc(100% - 10%);
-  height: calc(100%);
+  height: calc(100% - 10%);
 }
 .container {
+  height: calc(100%);
   width: calc(100% - 10%);
   padding: 15px;
   margin: auto;
@@ -116,8 +117,10 @@ body {
     .col-show {
       margin-top: 20px;
       position: absolute;
+      top: 40px;
       background-color: var(--third-color);
       width: calc(80% - 10%);
+      height: 600px;
       font-size: 55px;
       color: white;
       z-index: 99;
