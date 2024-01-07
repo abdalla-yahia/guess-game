@@ -109,7 +109,7 @@ char.forEach((e,i)=>{
 
 //Event Change Character 
     e.oninput=()=>{
-            const test = /^[a-zA-Z]/
+            const test = /^[a-zA-Z]/;
             if (!e.value.match(test)){
                 alert('Only English letters are allowed🙃')
                 e.value=''
