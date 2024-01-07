@@ -116,8 +116,8 @@ body {
     margin-top: 150px;
     .col-show {
       margin-top: 20px;
-      position: absolute;
       top: 40px;
+      position: absolute;
       background-color: var(--third-color);
       width: calc(80% - 10%);
       height: 600px;
@@ -177,13 +177,15 @@ body {
       caret-color: var(--main-color);
     }
     .col {
-      margin-top: 20px;
       position: absolute;
+      margin-top: 20px;
+      top: 40px;
       background-color: var(--background-color);
       width: calc(80% - 10%);
       flex-wrap: wrap;
       padding: 25px 0;
       border-radius: 20px;
+      height: auto;
       .chield {
         width: calc(90% - 10%);
         height: auto;
@@ -303,17 +305,17 @@ body {
       }
       .contain {
         flex-direction: column;
-        width: 100%;
+        max-width: 90%;
         gap: 0;
         .timer {
-          width: 100%;
+          width: 90%;
         }
         .select-level {
-          width: 100%;
+          width: 80%;
           font-size: 15px;
         }
         .best-score {
-          width: 100%;
+          width: 90%;
         }
       }
     }
@@ -348,6 +350,12 @@ body {
     }
     .row-2 {
       text-align: center;
+      height: 420px;
+      gap: 10px;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 20px;
     }
   }
 }
